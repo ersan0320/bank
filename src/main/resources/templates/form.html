@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>用户信息表单</title>
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Overall page style */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #1165cb, #25f5fc); /* Gradient background */
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Centering the form */
+        .container {
+            max-width: 600px;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #614caf;
+            font-weight: bold;
+        }
+
+        /* Form element styling */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        select:focus {
+            border-color: #6cae6e; /* Focus border color */
+            outline: none;
+        }
+
+        .radio-group,
+        .checkbox-group {
+            display: flex;
+            gap: 15px;
+        }
+
+        .radio-group input,
+        .checkbox-group input {
+            margin-right: 5px;
+        }
+
+        /* Submit button styling */
+        button.submit-btn {
+            width: 100%;
+            padding: 14px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s;
+        }
+
+        button.submit-btn:hover {
+            background-color: #45a049;
+        }
+
+        button.submit-btn:active {
+            transform: scale(0.98); /* Button click effect */
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                width: 90%;
+            }
+            h1 {
+                font-size: 24px;
+            }
+            button.submit-btn {
+                font-size: 16px;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>用户信息表单</h1>
+    <form id="userForm">
+        <div class="form-group">
+            <label for="name">姓名:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="age">年龄:</label>
+            <input type="number" id="age" name="age" required>
+        </div>
+
+        <div class="form-group">
+            <label>性别:</label>
+            <div class="radio-group">
+                <input type="radio" id="male" name="gender" value="male" required>
+                <label for="male">男</label>
+                <input type="radio" id="female" name="gender" value="female" required>
+                <label for="female">女</label>
+                <input type="radio" id="other" name="gender" value="other" required>
+                <label for="other">其他</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>爱好:</label>
+            <div class="checkbox-group">
+                <input type="checkbox" id="hobby1" name="hobbies" value="reading">
+                <label for="hobby1">阅读</label>
+                <input type="checkbox" id="hobby2" name="hobbies" value="traveling">
+                <label for="hobby2">旅行</label>
+                <input type="checkbox" id="hobby3" name="hobbies" value="sports">
+                <label for="hobby3">运动</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="education">学历:</label>
+            <select id="education" name="education" required>
+                <option value="">请选择</option>
+                <option value="highschool">高中</option>
+                <option value="bachelor">本科</option>
+                <option value="master">硕士</option>
+                <option value="doctor">博士</option>
+            </select>
+        </div>
+
+        <button type="submit" class="submit-btn">提交</button>
+    </form>
+</div>
+</body>
+</html>
